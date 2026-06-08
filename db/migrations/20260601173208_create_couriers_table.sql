@@ -1,0 +1,13 @@
+-- migrate:up
+CREATE TABLE couriers (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(30) NOT NULL,
+    vehicle_type VARCHAR(50) NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- migrate:down
+DROP TABLE couriers;
